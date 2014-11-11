@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk7"/>
+	<classpathentry kind="lib" path="libs/jersey-client-1.14.jar"/>
+	<classpathentry kind="lib" path="libs/jersey-core-1.14.jar"/>
+	<classpathentry kind="lib" path="libs/jsch-0.1.49.jar"/>
+	<classpathentry kind="lib" path="libs/OMA_Restful_API_xsd.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
