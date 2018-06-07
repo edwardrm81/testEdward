@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+	
+	<!-- Login -->
+	<managed-bean>
+		<managed-bean-name>controlLogin</managed-bean-name>
+		<managed-bean-class>com.edw.controlador.controles.ControlLogin</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<navigation-rule>
+		<from-view-id>/index.jsp</from-view-id>	
+		<navigation-case>
+			<from-outcome>loginok</from-outcome>
+			<to-view-id>/jsp/usuarioLista.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+    
+    <!-- Usuario Editar -->
+	<managed-bean>
+		<managed-bean-name>controlUsuarioEditar</managed-bean-name>
+		<managed-bean-class>com.edw.controlador.controles.ControlUsuarioEditar</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+		
+	<navigation-rule>
+		<from-view-id>/jsp/usuarioEditar.jsp</from-view-id>	
+		<navigation-case>
+			<from-outcome>volver</from-outcome>
+			<to-view-id>/jsp/usuarioLista.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Usuario Lista -->
+	<managed-bean>
+		<managed-bean-name>controlUsuarioLista</managed-bean-name>
+		<managed-bean-class>com.edw.controlador.controles.ControlUsuarioLista</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<navigation-rule>
+		<from-view-id>/jsp/usuarioLista.jsp</from-view-id>	
+		<navigation-case>
+			<from-outcome>editar</from-outcome>
+			<to-view-id>/jsp/usuarioEditar.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/jsp/usuarioLista.jsp</from-view-id>	
+		<navigation-case>
+			<from-outcome>nuevo</from-outcome>
+			<to-view-id>/jsp/usuarioEditar.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	
+	
+	
+</faces-config>

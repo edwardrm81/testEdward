@@ -1,0 +1,4 @@
+include ':ConciliadorTarjetasVsGeoposEJB'
+include ':ConciliadorTarjetasVsGeoposWEB'
+include ':ConciliadorTarjetasVsGeoposEAR'
+rootProject.name='ConciliadorTarjetasVsGeopos'

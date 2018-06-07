@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+processors,sysinfo,,,"2",1265806087344
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1265806087344
+java.runtime.version,sysinfo,,,"1.6.0_18-b07",1265806087344
+java.specification.name,sysinfo,,,"Java Platform API Specification",1265806087344
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1265806087344
+java.specification.version,sysinfo,,,"1.6",1265806087344
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1265806087344
+java.version,sysinfo,,,"1.6.0_18",1265806087344
+java.vm.info,sysinfo,,,"mixed mode, sharing",1265806087344
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1265806087344
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1265806087344
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1265806087344
+java.vm.specification.version,sysinfo,,,"1.0",1265806087344
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1265806087344
+java.vm.version,sysinfo,,,"16.0-b13",1265806087344
+started,bundle,com.aptana.ide.server.core,1.5.0.24896,"com.aptana.ide.server.core",1265806087501
+closed,editor,com.aptana.ide.server.portal,1.5.0.26171,"com.aptana.ide.server.portal.ui.MyAptanaEditor",1265806089297
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265806111309
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265806111372
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265807055994
+closed,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265807057353
+stopped,bundle,org.eclipse.jst.ws.axis.creation.ui,1.0.406.v200903031852,"org.eclipse.jst.ws.axis.creation.ui",1265807057869
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.ui,1.0.405.v200901261650,"org.eclipse.jst.ws.axis.consumption.ui",1265807057869
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.core,1.0.306.v200810082309,"org.eclipse.jst.ws.axis.consumption.core",1265807057869
+stopped,bundle,org.eclipse.jst.ws.axis2.creation.ui,1.0.103.v200807162242,"org.eclipse.jst.ws.axis2.creation.ui",1265807057869

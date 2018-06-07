@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.xsd,2.5.0.v200906151043,"org.eclipse.xsd",1267291712146
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291712891
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291720062
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291724844
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291729770
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291806026
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.import",1267291806048
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.import",1267291806048
+started,bundle,org.eclipse.equinox.p2.ui,1.0.101.R35x_v20090819,"org.eclipse.equinox.p2.ui",1267291809234
+started,bundle,org.eclipse.equinox.p2.ui.sdk,1.0.100.v20090520-1905,"org.eclipse.equinox.p2.ui.sdk",1267291809235
+started,bundle,org.eclipse.ecf.identity,3.0.0.v20090831-1906,"org.eclipse.ecf.identity",1267291809441
+started,bundle,org.eclipse.ecf,3.0.0.v20090831-1906,"org.eclipse.ecf",1267291809444
+started,bundle,org.eclipse.ecf.provider.filetransfer.httpclient,3.0.1.v20090831-1906,"org.eclipse.ecf.provider.filetransfer.httpclient",1267291809470
+started,bundle,org.eclipse.ecf.provider.filetransfer,3.0.1.v20090831-1906,"org.eclipse.ecf.provider.filetransfer",1267291809471
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291810299
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1267291816769
+error,log,,,"Unhandled event loop exception during blocked modal context.",1267291881247
+error,log,,,"Unable to load the repository http://download.eclipse.org/releases/galileo",1267291904158
+started,bundle,org.eclipse.equinox.p2.touchpoint.natives,1.0.101.R35x_v20090806,"org.eclipse.equinox.p2.touchpoint.natives",1267291909095
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291929745
+executed,command,org.eclipse.equinox.p2.ui.sdk,1.0.100.v20090520-1905,"org.eclipse.equinox.p2.ui.sdk.install",1267291929780
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291930051
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291979344
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291979414
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1267291985507

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1265804874585
+java.runtime.version,sysinfo,,,"1.6.0_18-b07",1265804874585
+java.specification.name,sysinfo,,,"Java Platform API Specification",1265804874585
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1265804874585
+java.specification.version,sysinfo,,,"1.6",1265804874585
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1265804874585
+java.version,sysinfo,,,"1.6.0_18",1265804874585
+java.vm.info,sysinfo,,,"mixed mode, sharing",1265804874585
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1265804874585
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1265804874585
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1265804874585
+java.vm.specification.version,sysinfo,,,"1.0",1265804874585
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1265804874585
+java.vm.version,sysinfo,,,"16.0-b13",1265804874585
+started,bundle,org.tigris.subversion.subclipse.mylyn,3.0.0,"org.tigris.subversion.subclipse.mylyn",1265804874695
+started,bundle,org.eclipse.epp.usagedata.ui,1.1.0.R200906100410,"org.eclipse.epp.usagedata.ui",1265804875710
+started,bundle,com.aptana.ide.server.core,1.5.0.24896,"com.aptana.ide.server.core",1265804875913
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265804877552
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265805128156
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1265805131499
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265805137998
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265805176302
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.import",1265805176333
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.import",1265805176333
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1265805182035

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conciliador Tarjetas Vs Geopos</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/ngDialog.min.css" />
+    <link rel="stylesheet" href="../styles/ngDialog-theme-default.min.css" />
+    <link rel="stylesheet" href="../styles/angular-busy.min.css" />
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/reset.css"  type="text/css" />
+	<link rel="stylesheet" href="../styles/style.css"  type="text/css" /> 
+</head>
+<body style="width: 98%; height: 98%;" >
+<div id="Container" style="width: 96.5%; ">
+<div id="PanelContent" class="grid center thirdfourth last" style="width: 100%;">
+	<div  class="pad08" ng-app="app" ng-controller="apiAppCtrl as vm" ng-init="vm.getRazonesSocialesList(); vm.getTiendasList(null);">
+		<div class="titleBarra" style="width: 97.5%; height: 22px;">
+			<div class="left">
+				<h2>Conciliador Tarjetas vs Geopos</h2>
+			</div>
+		</div>
+		<br class="clear"/>
+		<br class="clear"/>
+		<br class="clear"/> 
+	<form name="form">
+		<div class="ContentBox" style="height:10% width: 98%;">
+	       	<table style="width: 98%;" id="tablaFiltros">
+	       		<tr>
+					<td width="5%">
+						<label style="font-weight: bold; width:100%;">Empresa Facturadora:</label>
+					</td>
+					<td width="13%">
+						<select ng-model="vm.razonsocialSelected" 
+						  	ng-change="vm.getTiendasList(vm.razonsocialSelected.nmrazonsocial);"  
+						  	ng-options="razonsocial.cdrazonsocial + ' - ' + razonsocial.dsrazonsocial for razonsocial in vm.razonesSocialesList" 
+						  	style="width: 100%;"
+						>
+							<option value="" selected>[ TODAS LAS EMPRESAS ]</option>
+				   		</select>
+					</td>	
+						
+					<td width="5%">
+						<label style="font-weight: bold;">Tienda:</label>
+					</td>
+					<td  width="13%">
+						<select ng-model="vm.tiendaSelected" 
+						  	ng-options="tienda.cdtienda + ' - ' + tienda.dsnombre for tienda in vm.tiendasList"
+						  	style="width: 100%;"
+						>
+				       		<option value="" selected>[ Seleccionar ]</option>
+				    		<!--
+				    		<option  ng-repeat="tienda in vm.tiendasList" value="{{tienda.cdtienda}}">{{tienda.cdtienda}} - {{tienda.dsnombre}}</option>
+				    		-->
+				   		</select>  
+					</td>
+						
+					<td width="9%">
+						<label style="font-weight: bold; width: 100%;">Fecha Inicial:</label>
+						<label style="width: 100%;">[yyyy-mm-dd]</label>
+					</td>
+					<td width="8%">
+						<input id="fechaInicial" name="fechaInicial" style="width: 100%;" type="text" ng-model="vm.fechaInicial" ca-datepicker="yy-mm-dd" /><br>
+					</td>
+
+					<td width="9%">
+						<label style="font-weight: bold; width: 100%;">Fecha Final:</label>
+						<label style="width: 100%;">[yyyy-mm-dd]</label>
+					</td>
+					<td width="8%">
+						<input id="fechaFinal" name="fechaFinal" style="width: 100%;" type="text" ng-model="vm.fechaFinal" ca-datepicker="yy-mm-dd" /><br>
+					</td>	
+
+					<td width="4%">
+						<label style="font-weight: bold; width:100%;">Forma Pago:</label>
+					</td>
+					<td  width="10%">
+						<select ng-model="vm.formaPago" style="width: 100%;">
+							<option value="" selected>[ Seleccionar ]</option>
+				    		<option value="RecaudoTarjeta">Recaudo Tarjeta</option>
+				    		<option value="PrimeraCompra">Primera Compra</option>
+				   		</select>  
+					</td>	
+					
+					<td width="7%">
+						<label style="font-weight: bold; width:100%;">Mostrar solo diferencias:</label>
+					</td>
+					<td width="2%">
+						<input type="checkbox" ng-model="vm.mostrarSoloDiferencia" >
+					</td>
+
+					<td width="1%" >
+						<img ng-click="vm.consultar(vm.formaPago)" title="Consultar" alt="Consultar" id="img_consultar" width="20" height="20" class="action" src="../img/search_icon.png"></img>
+					</td>
+
+					<td width="1%">
+						<img ng-click="vm.enviarEmail(vm.formaPago)" title="Enviar E-Mail" alt="Enviar E-Mail" id="img_enviarEmail"  width="20" height="20" class="action" src="../img/send_e-mail.gif"></img>
+					</td>
+				</tr>
+			            					
+			</table>
+			<hr></hr>
+			<div style="position:absolute; margin-top: -5px; margin-left: 20px; top: 30px;  text-align: center; left: 0%;" ng-show="vm.showProcessMsg" ng-cloak>
+				<img align="middle" src="../img/progressBarLong_X.gif"  />
+				<div style="color:#000000; font-family:Verdana; font-size:10px; font-weight:bold; width: 200px; text-align: left; margin-left:12px;">
+					Procesando...
+				</div>
+			</div>			
+			<div class="grid_8"  style="height: 98%; overflow-x: auto; overflow-y: auto; width: 100%; height: 40%" ng-cloak>
+				<table class="fancyTable" border="0" cellpadding="0" cellspacing="1" id="it_info_resultadosConsulta" width="100%" style="height: 30%;">
+					<thead>
+						<tr>
+							<th>Fecha</th>
+							<th>Nombre Tienda</th>
+							<th>Tienda</th>
+							<th>Caja</th>
+							<th>Valor Tarjetas</th>
+							<th>Valor Geopos</th>
+							<th>Valor Diferencia</th>
+							<th>Ver Detalle Tarjetas</th>
+						</tr>	
+					</thead>
+					<tr  ng-repeat="result in vm.resultadosConsulta | pagination: vm.curPage * vm.pageSize | limitTo: vm.pageSize">
+						<td>{{result.fecha != null ? result.fecha : 'null' }}</td>
+						<td>{{result.dsnombre != null ? result.dsnombre : 'null' }}</td>
+						<td>{{result.cdtienda != null ? result.cdtienda : 'null' }}</td>
+						<td>{{result.nmcaja != null ? result.nmcaja : 'null' }}</td>
+						<td>{{result.vrpagadoTarjetas != null ? result.vrpagadoTarjetas : 'null' }}</td>
+						<td>{{result.vrpagadoGeopos != null ? result.vrpagadoGeopos : 'null' }}</td>
+						<td>{{result.vrpagadoDiferencia != null ? result.vrpagadoDiferencia : 'null' }}</td>
+						<td>
+							<div ng-if="vm.formaPagoConsultada=='RecaudoTarjeta'">
+								<div ng-controller="RecaudosDetallesCtrl">
+									<img ng-click="getDtoSelect(result); openRecaudosDetalles('lg'); getRecaudosDetallesList(result);" title="Ver Detalles Recaudo Tarjeta" alt="Ver Detalles Recaudo Tarjeta" id="img_verDetallesRecaudos"  width="20" height="20" class="action" src="../img/search_icon.png"></img>
+								</div>
+							</div>
+							
+							<div ng-if="vm.formaPagoConsultada=='PrimeraCompra'">
+								<div ng-controller="PrimeraCompraDetallesCtrl">
+									<img ng-click="getDtoSelect(result); openPrimeraCompraDetalles('lg'); getPrimeraCompraDetallesList(result);" title="Ver Detalles Primera Compra" alt="Ver Detalles Primera Compra" id="img_verDetallesPrimeraCompra"  width="20" height="20" class="action" src="../img/search_icon.png"></img>
+								</div>
+							</div>
+							
+						</td>
+       				</tr >
+				</table>
+
+				<center>
+	       			<div class="pagination pagination-centered" ng-show="vm.resultadosConsulta.length">
+						<ul class="pagination-controle pagination">
+	 						<li>
+	  							<button type="button" class="btn btn-primary" ng-disabled="vm.curPage == 0" ng-click="vm.curPage=vm.curPage-1">&lt;&lt;</button>
+	 						</li>
+	 						<li>
+	 							P&aacute;g. {{vm.curPage + 1}} de {{ vm.numberOfPages() }}
+	 							<!--<span>Pág. {{vm.curPage + 1}} de {{ vm.numberOfPages() }}</span>-->
+	 						</li>
+	 						<li>
+	 							<button type="button" class="btn btn-primary" ng-disabled="vm.curPage >= vm.resultadosConsulta.length/vm.pageSize - 1" ng-click="vm.curPage = vm.curPage+1">&gt;&gt;</button>
+	 						</li>
+						</ul>
+					</div>
+				</center>	
+				
+       	    </div>
+  			
+		</div>
+	</form>
+	</div>
+</div>
+</div>
+    <script src="../scripts/ext/jquery-1.11.2.min.js"></script>
+	<script src="../scripts/ext/angular.min.js"></script>
+    <script src="../scripts/ext/bootstrap.min.js"></script>
+    <script src="../scripts/ext/angular-animate.min.js"></script>
+    <script src="../scripts/ext/angular-route.min.js"></script>
+    <script src="../scripts/ext/jquery-ui.min.js"></script>
+    <script src="../scripts/ext/ngDialog.min.js"></script>
+    <script src="../scripts/ext/angular-busy.min.js"></script>
+    <script src="../scripts/ext/ui-bootstrap-tpls-0.11.1.min.js"></script>
+    <script src="../scripts/ext/dirPagination.js"></script>
+    <script src="../scripts/controllers/conciliadorController.js"></script>
+    <script src="../scripts/controllers/directives.js"></script>
+    <script src="../scripts/controllers/services.js"></script>
+    <script src="../scripts/controllers/filters.js"></script>
+    <script src="../scripts/controllers/recaudosDetallesController.js"></script>
+    <script src="../scripts/controllers/primeraCompraDetallesController.js"></script>
+    
+    <link rel="stylesheet" href="../styles/jquery-ui-1.10.0.custom.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+	
+</body>
+</html>

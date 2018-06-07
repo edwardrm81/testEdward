@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ant.AntLaunchConfigurationType">
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_OUTPUT_ON" value="true"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
+<booleanAttribute key="org.eclipse.debug.ui.private" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6.0_04"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ant.internal.ui.antsupport.InternalAntRunner"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
+<mapAttribute key="org.eclipse.ui.externaltools.ATTR_ANT_PROPERTIES">
+<mapEntry key="port" value="8081"/>
+<mapEntry key="module.archive.name" value="proyecto5web.war"/>
+<mapEntry key="module.name" value="proyecto5web"/>
+<mapEntry key="serverAddress" value="127.0.0.1"/>
+<mapEntry key="serverRootDirectory" value="D:/ArchivosDePrograma/JBoss/jboss-5.0.1.GA"/>
+<mapEntry key="project.working.dir" value="D:/Mis documentos/Edward/Personal/proyectoGen/.metadata/.plugins/org.eclipse.wst.server.core/tmp1"/>
+<mapEntry key="server.publish.dir" value="D:/ArchivosDePrograma/JBoss/jboss-5.0.1.GA/server/default/deploy"/>
+<mapEntry key="project.location" value="D:/Mis documentos/Edward/Personal/proyectoGen/proyecto5web"/>
+<mapEntry key="contextRoot" value="proyecto5web"/>
+<mapEntry key="jndiPort" value="1099"/>
+<mapEntry key="serverConfig" value="default"/>
+<mapEntry key="project.name" value="proyecto5web"/>
+<mapEntry key="module.dir" value="D:/Mis documentos/Edward/Personal/proyectoGen/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/proyecto5web"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_ANT_TARGETS" value="deploy.j2ee.web"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="C:\Archivos de programa\eclipse\plugins\org.eclipse.jst.server.generic.jboss_1.6.1.v200904151730\buildfiles\jboss323.xml"/>
+<stringAttribute key="process_factory_id" value="org.eclipse.ant.ui.remoteAntProcessFactory"/>
+</launchConfiguration>

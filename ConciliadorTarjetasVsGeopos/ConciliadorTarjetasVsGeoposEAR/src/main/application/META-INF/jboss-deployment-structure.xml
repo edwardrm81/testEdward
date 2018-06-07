@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<deployment>
+		<!--
+		<dependencies>
+	    	<module name="deployment.GCOSecurityFilter.jar" export="true"/>
+			<module name="deployment.ojdbc6.jar" export="true"/>
+		</dependencies>
+		-->
+		<exclusions>
+			<module name="org.apache.log4j" />
+            <module name="org.apache.commons.logging" />
+            <module name="org.slf4j" />
+            <module name="org.slf4j.ext" />
+            <module name="org.slf4j.impl" />
+		</exclusions>
+ 	</deployment>
+ 	
+ 	<sub-deployment name="ConciliadorTarjetasVsGeoposWEB.war">
+		<exclusions>
+	    	<module name="org.apache.log4j" />
+		    <module name="org.apache.commons.logging" />
+		    <module name="org.slf4j" />
+		    <module name="org.slf4j.ext" />
+		    <module name="org.slf4j.impl" />
+		</exclusions>
+	</sub-deployment>
+	
+ 	<sub-deployment name="ConciliadorTarjetasVsGeoposEJB.jar">
+		<exclusions>
+			<module name="org.apache.log4j" />
+			<module name="org.apache.commons.logging" />
+			<module name="org.slf4j" />
+			<module name="org.slf4j.ext" />
+			<module name="org.slf4j.impl" />
+		</exclusions>
+</sub-deployment>
+
+</jboss-deployment-structure>

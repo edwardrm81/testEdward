@@ -1,0 +1,37 @@
+apply plugin: 'war'
+apply plugin: "jacoco"
+
+[ compileJava, compileTestJava ]*.options*.encoding = 'UTF-8'
+
+//sourceCompatibility = '1.7'
+//targetCompatibility = '1.7'
+sourceCompatibility = '1.6'
+targetCompatibility = '1.6'
+
+group = 'co.com.gco.tarjetas.conciliador'
+
+dependencies {
+	providedCompile project(':ConciliadorTarjetasVsGeoposEJB')
+	providedCompile 'org.jboss.spec:jboss-javaee-6.0:3.0.3.Final'
+//	providedCompile group: 'GcoArquitectura', name: 'SecurityServicesAPI', version:'1.0'
+	testCompile 'junit:junit:4.11'
+	testCompile 'org.mockito:mockito-all:1.9.5'
+	testCompile 'org.easytesting:fest-assert-core:2.0M10'
+	testCompile 'com.googlecode.catch-exception:catch-exception:1.2.0'
+	testCompile 'net.java.quickcheck:quickcheck:0.6'
+	providedCompile 'org.slf4j:slf4j-api:1.7.12'
+	providedCompile 'ch.qos.logback:logback-classic:1.1.3'
+	providedCompile 'ch.qos.logback:logback-core:1.1.3'
+}
+
+repositories {
+	mavenCentral()
+//	maven {
+//            url "http://gesconf2.corp.gco.com.co:8081/artifactory/libs-release"
+//    }
+}
+
+
+war {
+	archiveName = "${baseName}.${extension}"
+}

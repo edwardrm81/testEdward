@@ -1,0 +1,3 @@
+<jboss-web>
+  <context-root>ConciliadorTarjetasVsGeopos</context-root>
+</jboss-web>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="ConciliadorTarjetasVsGeoposPU">
+		<jta-data-source>java:jboss/jdbc/ConciliadorTarjetasVsGeopos</jta-data-source>
+		<properties>
+			<!-- in Start server no validate DDL (structure) database -->
+			<!--
+      		<property name="hibernate.validator.apply_to_ddl" value="false"/>
+      		<property name="hibernate.validator.autoregister_listeners" value="false"/>
+      		 -->
+      	</properties>
+      			
+		<!-- <shared-cache-mode>NONE</shared-cache-mode>  --> 
+		<class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TtarRazonsocial</class>
+		<class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TtarTienda</class>
+		<class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TtarParametroSistema</class>
+		<class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TtarConciliadorGeopos</class>
+		<class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TtarConciliadorGeoposHead</class>
+		<!-- <class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TrecRecaudo</class> -->
+		<!-- <class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TtarAprobacion</class> -->
+		<!-- <class>co.com.gco.tarjetas.conciliador.ejb.persistence.entities.TtarCliente</class> -->
+	</persistence-unit>
+</persistence>

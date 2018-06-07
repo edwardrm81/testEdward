@@ -1,0 +1,98 @@
+			<div ng-controller="PrimeraCompraDetallesCtrl">
+				<!--
+    			<script type="text/ng-template" id="myTeplateRecaudosDetalles.html">
+ 				-->
+        			<div class="modal-header">
+
+				       	<table style="width: 98%;" id="tablaPrimeraCompraDetallesFiltros">
+
+				       		<tr>
+
+								<td width="3%">
+									<button class="btn btn-primary" ng-click="cancel()">Cerrar</button>
+								</td>
+
+								<td width="4%">
+									<label style="font-weight: bold; width: 100%;">Fecha:</label>
+								</td>
+								<td width="8%">
+									{{ consolidadosDiffDTO.fecha != null ? consolidadosDiffDTO.fecha : 'null' }}
+								</td>
+
+								<td width="4%">
+									<label style="font-weight: bold; white-space: nowrap;">Nombre Tienda:</label>
+								</td>
+								<td  width="19%">
+									{{ consolidadosDiffDTO.dsnombre != null ? consolidadosDiffDTO.dsnombre : 'null' }}
+								</td>
+
+								<td width="4%">
+									<label style="font-weight: bold;">Tienda:</label>
+								</td>
+								<td  width="4%">
+									{{ consolidadosDiffDTO.cdtienda != null ? consolidadosDiffDTO.cdtienda : 'null' }}
+								</td>
+
+								<td width="4%">
+									<label style="font-weight: bold; width: 100%;">Caja:</label>
+								</td>
+								<td width="2%">
+									{{ consolidadosDiffDTO.nmcaja != null ? consolidadosDiffDTO.nmcaja : 'null' }}
+								</td>
+
+								<td width="9%">
+									<label style="font-weight: bold; width: 100%;">Valor Total:</label>
+								</td>
+								<td width="5%">
+									{{ consolidadosDiffDTO.vrpagadoTarjetas != null ? consolidadosDiffDTO.vrpagadoTarjetas : 'null' }}
+								</td>
+
+							</tr>
+						            					
+						</table>        				
+        			</div>
+
+        			<div class="modal-body">
+						<div class="grid_8"  style="height: 98%; overflow-x: auto; overflow-y: auto; width: 100%; height: 40%" ng-cloak>
+							<table class="fancyTable" border="0" cellpadding="0" cellspacing="1" id="it_info_primeraCompraDetalles" width="100%" style="height: 30%;">
+								<thead>
+									<tr>
+										<th>Valor Primera Compra</th>
+										<th>C&oacute;digo de Barras</th>
+										<th>Ticket</th>
+										<th>Documento Cliente</th>
+										<th>Nombre Cliente</th>
+									</tr>
+								</thead>
+								<tr  ng-repeat="resultDet in detallesLista | pagination: curPageP * pageSizeP | limitTo: pageSizeP">
+									<td>{{resultDet.nmmonto != null ? resultDet.nmmonto : 'null' }}</td>
+									<td>{{resultDet.cdbarras != null ? resultDet.cdbarras : 'null' }}</td>
+									<td>{{resultDet.nmticket != null ? resultDet.nmticket : 'null' }}</td>
+									<td>{{resultDet.cddocumento != null ? resultDet.cddocumento : 'null' }}</td>
+									<td>{{resultDet.nombreCompletoCliente != null ? resultDet.nombreCompletoCliente : 'null' }}</td>
+			       				</tr >
+							</table>
+							
+							<center>
+				       			<div class="pagination pagination-centered" ng-show="detallesLista.length">
+									<ul class="pagination-controle pagination">
+				 						<li>
+				  							<button type="button" class="btn btn-primary" ng-disabled="curPageP == 0" ng-click="curPageP=curPageP-1">&lt;&lt;</button>
+				 						</li>
+				 						<li>
+				 							P&aacute;g. {{curPageP + 1}} de {{ numberOfPagesP() }}
+				 							<!--<span>Pág. {{curPageP + 1}} de {{ numberOfPagesP() }}</span>-->
+				 						</li>
+				 						<li>
+				 							<button type="button" class="btn btn-primary" ng-disabled="curPageP >= detallesLista.length/pageSizeP - 1" ng-click="curPageP = curPageP+1">&gt;&gt;</button>
+				 						</li>
+									</ul>
+								</div>
+							</center>
+							
+						</div>
+					</div>
+				<!--
+    			</script>
+    			-->
+    		</div>
